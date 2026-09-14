@@ -1,0 +1,23 @@
+<!-- @dsCard group="Spacing" -->
+<title>Layout and spacing</title>
+<link rel="stylesheet" href="preview.css" />
+<style>
+  .bar { height: 20px; border-radius: 4px; background: hsl(var(--primary) / 0.25); border: 1px solid hsl(var(--primary)); }
+  .bars { display: grid; gap: 12px; }
+  .bars .row { display: grid; grid-template-columns: 190px 1fr; align-items: center; }
+</style>
+<h1>Layout and spacing</h1>
+<h2>Containers (shown at 1/8 scale)</h2>
+<div class="bars">
+  <div class="row"><code>--container-wide 72rem</code><div class="bar" style="width:calc(var(--container-wide) / 8)"></div></div>
+  <div class="row"><code>--container-medium 56rem</code><div class="bar" style="width:calc(var(--container-medium) / 8)"></div></div>
+  <div class="row"><code>--container-prose 48rem</code><div class="bar" style="width:calc(var(--container-prose) / 8)"></div></div>
+  <div class="row"><code>--container-narrow 28rem</code><div class="bar" style="width:calc(var(--container-narrow) / 8)"></div></div>
+</div>
+<h2>Spacing (actual size)</h2>
+<div class="bars">
+  <div class="row"><code>--gutter 1.5rem</code><div class="bar" style="width:var(--gutter)"></div></div>
+  <div class="row"><code>--section-y-sm 4rem</code><div class="bar" style="width:var(--section-y-sm)"></div></div>
+  <div class="row"><code>--section-y 5rem</code><div class="bar" style="width:var(--section-y)"></div></div>
+  <div class="row"><code>--section-y-lg 6rem</code><div class="bar" style="width:var(--section-y-lg)"></div></div>
+</div>

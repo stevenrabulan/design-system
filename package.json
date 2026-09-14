@@ -1,0 +1,29 @@
+{
+  "name": "@stevenrabulan/design-system",
+  "version": "0.1.0",
+  "description": "Design tokens and Tailwind preset for Steven Rabulan projects",
+  "private": true,
+  "license": "UNLICENSED",
+  "main": "tailwind-preset.js",
+  "exports": {
+    "./tokens.css": "./tokens.css",
+    "./fonts.css": "./fonts.css",
+    "./tailwind-preset": "./tailwind-preset.js"
+  },
+  "files": [
+    "tokens.css",
+    "fonts.css",
+    "tailwind-preset.js"
+  ],
+  "scripts": {
+    "test": "node scripts/check-tokens.mjs"
+  },
+  "peerDependencies": {
+    "tailwindcss": "^3.4.0"
+  },
+  "peerDependenciesMeta": {
+    "tailwindcss": {
+      "optional": true
+    }
+  }
+}

@@ -1,0 +1,38 @@
+<!-- @dsCard group="Colors" -->
+<title>Brand palette</title>
+<link rel="stylesheet" href="preview.css" />
+<style>
+  .night {
+    position: relative;
+    overflow: hidden;
+    height: 180px;
+    border-radius: var(--radius);
+    background: linear-gradient(135deg, hsl(var(--brand-night-start)) 0%, hsl(var(--brand-night-end)) 100%);
+    display: grid;
+    place-items: center;
+    color: #fff;
+    font-family: var(--font-heading);
+    font-weight: var(--weight-bold);
+    font-size: 1.5rem;
+  }
+  .night svg { position: absolute; inset: auto 0 0 0; width: 100%; height: 100%; }
+  .night span { position: relative; }
+</style>
+<h1>Brand palette (theme independent)</h1>
+<div class="grid" id="grid"></div>
+<h2>Night gradient with waves</h2>
+<div class="night">
+  <svg viewBox="0 0 1440 320" preserveAspectRatio="none" aria-hidden="true">
+    <path fill="hsl(var(--brand-wave-back))" fill-opacity="0.3" d="M0,160L48,176C96,192,192,224,288,213.3C384,203,480,149,576,138.7C672,128,768,160,864,186.7C960,213,1056,235,1152,224C1248,213,1344,171,1392,149.3L1440,128L1440,320L0,320Z" />
+    <path fill="hsl(var(--brand-wave-front))" fill-opacity="0.2" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,218.7C672,235,768,245,864,234.7C960,224,1056,192,1152,181.3C1248,171,1344,181,1392,186.7L1440,192L1440,320L0,320Z" />
+  </svg>
+  <span>Need to get caught up with AI?</span>
+</div>
+<script>
+  const names = ['brand-violet', 'brand-violet-deep', 'brand-ink', 'brand-ink-raised', 'brand-paper', 'brand-night-start', 'brand-night-end', 'brand-wave-back', 'brand-wave-front'];
+  const grid = document.getElementById('grid');
+  for (const name of names) {
+    const value = getComputedStyle(document.documentElement).getPropertyValue(`--${name}`).trim();
+    grid.insertAdjacentHTML('beforeend', `<div class="swatch"><div class="chip" style="background:hsl(var(--${name}))"></div><div class="meta"><code>--${name}</code><span>${value}</span></div></div>`);
+  }
+</script>

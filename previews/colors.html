@@ -1,0 +1,20 @@
+<!-- @dsCard group="Colors" -->
+<title>Semantic colors</title>
+<link rel="stylesheet" href="preview.css" />
+<h1>Semantic colors (shadcn names)</h1>
+<div id="themes"></div>
+<script>
+  const tokens = ['background', 'foreground', 'card', 'primary', 'primary-hover', 'secondary', 'muted', 'muted-foreground', 'accent', 'destructive', 'border', 'input', 'ring'];
+  const themes = document.getElementById('themes');
+  for (const theme of ['light', 'dark']) {
+    const section = document.createElement('section');
+    section.className = `theme ${theme}`;
+    section.innerHTML = `<h2>${theme}</h2><div class="grid"></div>`;
+    themes.append(section);
+    const grid = section.querySelector('.grid');
+    for (const name of tokens) {
+      const value = getComputedStyle(section).getPropertyValue(`--${name}`).trim();
+      grid.insertAdjacentHTML('beforeend', `<div class="swatch"><div class="chip" style="background:hsl(var(--${name}))"></div><div class="meta"><code>--${name}</code><span>${value}</span></div></div>`);
+    }
+  }
+</script>

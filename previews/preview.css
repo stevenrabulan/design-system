@@ -1,0 +1,23 @@
+/* Shared chrome for the token preview cards. Not part of the design system. */
+@import url("../fonts.css");
+@import url("../tokens.css");
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: var(--font-sans);
+  color: hsl(var(--foreground));
+  background: hsl(var(--background));
+}
+h1 { font-family: var(--font-heading); font-size: 1.125rem; margin: 0 0 16px; }
+h2 { font-family: var(--font-heading); font-size: 0.875rem; margin: 24px 0 8px; text-transform: uppercase; letter-spacing: var(--tracking-nav); color: hsl(var(--muted-foreground)); }
+code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.75rem; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+.swatch { border: 1px solid hsl(var(--border)); border-radius: var(--radius); overflow: hidden; background: hsl(var(--card)); }
+.swatch .chip { height: 56px; }
+.swatch .meta { padding: 8px; display: grid; gap: 2px; }
+.swatch .meta span { font-size: 0.75rem; color: hsl(var(--muted-foreground)); }
+.row { display: flex; align-items: baseline; gap: 16px; padding: 10px 0; border-bottom: 1px solid hsl(var(--border)); }
+.row code { width: 190px; flex-shrink: 0; color: hsl(var(--muted-foreground)); }
+.theme { padding: 20px; border-radius: var(--radius); background: hsl(var(--background)); color: hsl(var(--foreground)); }

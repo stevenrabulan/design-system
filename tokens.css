@@ -1,0 +1,122 @@
+/*
+ * Steven Rabulan design tokens, v0.1
+ * Source of truth for every value. tailwind-preset.js only references these variables.
+ *
+ * Colors are HSL channels without hsl() so Tailwind opacity modifiers work
+ * (bg-background/95). Semantic names follow the shadcn/ui convention.
+ *
+ * Themes: :root and .light are light, .dark is dark. Both classes can be set on
+ * any element, so a light section can sit inside a dark page and vice versa.
+ */
+
+:root,
+.light {
+  /* shadcn semantic colors */
+  --background: 0 0% 97.3%; /* #f8f8f8 */
+  --foreground: 221 39% 11%; /* #111827 */
+  --card: 0 0% 100%; /* #ffffff */
+  --card-foreground: 221 39% 11%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 221 39% 11%;
+  --primary: 249.9 75.7% 53.1%; /* #4b2de2 */
+  --primary-foreground: 0 0% 100%;
+  --secondary: 220 14% 96%; /* #f3f4f6 */
+  --secondary-foreground: 221 39% 11%;
+  --muted: 220 14% 96%; /* #f3f4f6 */
+  --muted-foreground: 215 14% 34%; /* #4b5563 */
+  --accent: 220 14% 96%;
+  --accent-foreground: 221 39% 11%;
+  --destructive: 0 72.2% 50.6%; /* #dc2626 */
+  --destructive-foreground: 0 0% 100%;
+  --border: 216 12% 84%; /* #d1d5db */
+  --input: 216 12% 84%;
+  --ring: 249.9 75.7% 53.1%;
+
+  /* Brand extensions */
+  --primary-hover: 249.7 68.3% 44.5%; /* #3d24bf */
+}
+
+.dark {
+  --background: 240 22% 15%; /* #1e1e2f */
+  --foreground: 0 0% 100%;
+  --card: 240 20.4% 22.2%; /* #2d2d44 */
+  --card-foreground: 0 0% 100%;
+  --popover: 240 20.4% 22.2%;
+  --popover-foreground: 0 0% 100%;
+  --primary: 249.9 75.7% 53.1%; /* #4b2de2 */
+  --primary-foreground: 0 0% 100%;
+  --secondary: 240 20.4% 22.2%; /* #2d2d44 */
+  --secondary-foreground: 0 0% 100%;
+  --muted: 240 20.4% 22.2%;
+  --muted-foreground: 217.9 10.6% 64.9%; /* #9ca3af */
+  --accent: 240 20.4% 22.2%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 72.2% 50.6%; /* #dc2626 */
+  --destructive-foreground: 0 0% 100%;
+  --border: 240 16.3% 19.2%; /* #292939, white at 5% over background */
+  --input: 240 20.4% 22.2%;
+  --ring: 249.9 75.7% 53.1%; /* 2.16:1 on background. Open question, see README */
+
+  --primary-hover: 249.7 68.3% 44.5%;
+}
+
+:root {
+  /* Brand palette: fixed values that do not change with theme */
+  --brand-violet: 249.9 75.7% 53.1%; /* #4b2de2 */
+  --brand-violet-deep: 249.7 68.3% 44.5%; /* #3d24bf */
+  --brand-ink: 240 22% 15%; /* #1e1e2f */
+  --brand-ink-raised: 240 20.4% 22.2%; /* #2d2d44 */
+  --brand-paper: 0 0% 97.3%; /* #f8f8f8 */
+  --brand-night-start: 240 40.9% 17.3%; /* #1a1a3e */
+  --brand-night-end: 240 40% 9.8%; /* #0f0f23 */
+  --brand-wave-back: 240 33.3% 26.5%; /* #2d2d5a, drawn at 30% opacity */
+  --brand-wave-front: 240 26.9% 32.7%; /* #3d3d6a, drawn at 20% opacity */
+
+  /* Typography */
+  --font-sans: "Figtree", system-ui, sans-serif;
+  --font-heading: "Libre Franklin", system-ui, sans-serif;
+
+  --text-display: 3.75rem; /* Hero h1 at lg. 3rem at md, 2.25rem on mobile */
+  --text-h1: 2.25rem; /* Page titles */
+  --text-h2: 2.25rem; /* Section titles at md. 1.875rem on mobile */
+  --text-h3: 1.25rem; /* Item titles */
+  --text-lead: 1.5rem; /* Hero subhead at md. 1.25rem on mobile */
+  --text-body: 1rem;
+  --text-label: 0.875rem; /* Compact buttons, footer nav */
+
+  --leading-tight: 1;
+  --leading-body: 1.625;
+
+  --tracking-button: 0.025em; /* Uppercase buttons */
+  --tracking-nav: 0.05em; /* Uppercase footer nav */
+
+  --weight-body: 400;
+  --weight-medium: 500; /* Inline text links */
+  --weight-bold: 700; /* Headings, buttons */
+
+  /* Layout */
+  --container-wide: 72rem; /* Header, hero, footer */
+  --container-medium: 56rem; /* CTA banner */
+  --container-prose: 48rem; /* Reading sections, legal pages */
+  --container-narrow: 28rem; /* Link-in-bio column */
+  --gutter: 1.5rem;
+  --section-y-sm: 4rem;
+  --section-y: 5rem;
+  --section-y-lg: 6rem;
+
+  /* Shape */
+  --radius: 0.5rem;
+  --radius-pill: 9999px;
+  --accent-bar-width: 3rem;
+  --accent-bar-height: 0.25rem;
+
+  /* Elevation */
+  --shadow-raised: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --blur-header: 4px;
+
+  /* Motion */
+  --duration-fast: 150ms;
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --scale-hover: 1.02; /* Full-width buttons */
+  --scale-hover-logo: 1.05;
+}

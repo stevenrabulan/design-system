@@ -1,0 +1,40 @@
+<!-- @dsCard group="Brand" -->
+<title>Shape, elevation, motion</title>
+<link rel="stylesheet" href="preview.css" />
+<style>
+  .demo { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+  .button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: var(--radius);
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    font-family: var(--font-heading);
+    font-weight: var(--weight-bold);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-button);
+    text-decoration: none;
+    transition: all var(--duration-fast) var(--ease-standard);
+  }
+  .button:hover { background: hsl(var(--primary-hover)); transform: scale(var(--scale-hover)); box-shadow: var(--shadow-raised); }
+  .button.secondary { background: hsl(var(--secondary)); color: hsl(var(--secondary-foreground)); }
+  .accent-bar { width: var(--accent-bar-width); height: var(--accent-bar-height); border-radius: var(--radius-pill); background: hsl(var(--primary)); }
+  .tile { width: 120px; height: 72px; border-radius: var(--radius); background: hsl(var(--card)); box-shadow: var(--shadow-raised); }
+</style>
+<h1>Shape, elevation, motion</h1>
+<h2>Radius and accent bar</h2>
+<div class="demo">
+  <a class="button" href="#">Primary (hover me)</a>
+  <div class="accent-bar" title="--accent-bar-width x --accent-bar-height, --radius-pill"></div>
+</div>
+<h2>Elevation</h2>
+<div class="demo"><div class="tile"></div><code>--shadow-raised</code></div>
+<h2>On dark</h2>
+<div class="theme dark demo">
+  <a class="button" href="#">Primary</a>
+  <a class="button secondary" href="#">Secondary</a>
+</div>
+<h2>Motion</h2>
+<div class="row"><code>--duration-fast</code><span>150ms</span></div>
+<div class="row"><code>--ease-standard</code><span>cubic-bezier(0.4, 0, 0.2, 1)</span></div>
+<div class="row"><code>--scale-hover</code><span>1.02 (full-width buttons), --scale-hover-logo 1.05</span></div>
